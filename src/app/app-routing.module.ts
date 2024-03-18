@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AutocadastroComponent } from './autocadastro/autocadastro/autocadastro.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'autocadastro', pathMatch:'full'},
+  //{path:'', redirectTo:'autocadastro', pathMatch:'full'},
   {path:'autocadastro', component: AutocadastroComponent }
 ];
 
