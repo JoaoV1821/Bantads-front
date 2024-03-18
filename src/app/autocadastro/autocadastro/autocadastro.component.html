@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-lg-10">
+      <div class="card">
+        <form #autocadastroForm="ngForm">
+          <div class="row align-items-start">
+            <div class="row">
+              <div class="col mx-3">
+                <label class="form-label mt-2" for="nome">Nome:</label>
+                <input class="form-control" name="nome" />
+              </div>
+              <div class="col">
+                <label class="form-label mt-2" for="email">Email:</label>
+                <input class="form-control" name="email" type="email" />
+              </div>
+            </div>
+
+            <div class="row justify-content-center">
+              <div class="col-sm-4 mx-3">
+                <label class="form-label mt-2" for="Telefone">Telefone:</label>
+                <input class="form-control" name="telefone" />
+              </div>
+              <div class="col-sm-4">
+                <label class="form-label mt-2" for="salario">Salário:</label>
+                <input class="form-control" name="salario" />
+              </div>
+            </div>
+
+            <div class="card-body">
+              <hr class="my-4"/>
+              <h6 class="mx-3">Endereço</h6>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col mx-3">
+                    <label class="form-label mt-2" for="tipo_rua">Tipo:</label>
+                    <input class="form-control" name="tipo_rua" />
+                </div>  
+                <div class="col">
+                    <label class="form-label mt-2" for="logradouro">Logradouro:</label>
+                    <input class="form-control" name="logradouro" />
+                </div>  
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
