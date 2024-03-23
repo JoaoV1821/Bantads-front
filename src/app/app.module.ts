@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
+
 import { AutocadastroModule } from './autocadastro/autocadastro.module';
 
 @NgModule({
@@ -16,7 +18,9 @@ import { AutocadastroModule } from './autocadastro/autocadastro.module';
     FormsModule,
     AutocadastroModule
   ],
-  providers: [],
+  providers: [
+    provideHttpClient()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
