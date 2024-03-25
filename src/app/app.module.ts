@@ -3,21 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
-
 import { AutocadastroModule } from './autocadastro/autocadastro.module';
-
+import { LoginModule } from './login/login.module';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    AutocadastroModule
+    LoginModule,
+    AutocadastroModule,
   ],
+
   providers: [
     provideHttpClient()
   ],
