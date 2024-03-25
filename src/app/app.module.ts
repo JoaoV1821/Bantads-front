@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 
 import { AutocadastroModule } from './autocadastro/autocadastro.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AutocadastroModule } from './autocadastro/autocadastro.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AutocadastroModule
+    AutocadastroModule,
+    SharedModule
   ],
   providers: [
     provideHttpClient()
