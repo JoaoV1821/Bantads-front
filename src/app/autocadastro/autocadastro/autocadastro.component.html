@@ -8,18 +8,28 @@
             <div class="row">
               <div class="col mx-3">
                 <label class="form-label mt-2" for="nome">Nome:</label>
-                <input class="form-control inputBand border-2" name="nome" [(ngModel)]="cliente.nome" [disabled]="this.solicitado"/>
+                <input class="form-control inputBand border-2" name="nome" #nome="ngModel" ngModel [disabled]="this.solicitado" minlength="3" required/>
+                  <div *ngIf="nome.errors && (nome!.dirty || nome!.touched)" class="alert alert-danger">
+                      <div [hidden]="!nome.errors['required']">Nome completo obrigatório.</div>
+                      <div [hidden]="!nome.errors['minlength']">O nome deve conter no mínimo 3 caracteres.</div>
+                  </div>
               </div>
               <div class="col">
                 <label class="form-label mt-2" for="email">Email:</label>
-                <input class="form-control inputBand border-2" name="email" type="email" [(ngModel)]="cliente.email" [disabled]="this.solicitado"/>
+                <input class="form-control inputBand border-2" name="email" type="email" #email="ngModel" ngModel [disabled]="this.solicitado" required/>
+                  <div *ngIf="email.errors && (email!.dirty || email!.touched)" class="alert alert-danger">
+                    <div [hidden]="!email.errors['required']">Email obrigatório.</div>
+                  </div>
               </div>
             </div>
             
             <div class="row justify-content-center">
               <div class="col-sm-4">
                 <label class="form-label mt-2" for="cpf">CPF:</label>
-                <input class="form-control inputBand border-2" name="cpf" [(ngModel)]="cliente.cpf" [disabled]="this.solicitado"/>
+                <input class="form-control inputBand border-2" name="cpf" #cpf="ngModel" ngModel [disabled]="this.solicitado" required/>
+                  <div *ngIf="cpf.errors && (cpf!.dirty || cpf!.touched)" class="alert alert-danger">
+                    <div [hidden]="!cpf.errors['required']">CPF obrigatório.</div>
+                  </div>
               </div>
             </div>
 
@@ -28,11 +38,17 @@
                 <label class="form-label mt-2" for="Telefone"
                   >Telefone:</label
                 >
-                <input class="form-control inputBand border-2" name="telefone" [(ngModel)]="cliente.telefone" [disabled]="this.solicitado"/>
+                <input class="form-control inputBand border-2" name="telefone" #telefone="ngModel" ngModel [disabled]="this.solicitado" required/>
+                  <div *ngIf="telefone.errors && (telefone!.dirty || telefone!.touched)" class="alert alert-danger">
+                    <div [hidden]="!telefone.errors['required']">Telefone obrigatório.</div>
+                  </div>
               </div>
               <div class="col-sm-4">
                 <label class="form-label mt-2" for="salario">Salário:</label>
-                <input class="form-control inputBand border-2" name="salario" [(ngModel)]="cliente.salario" [disabled]="this.solicitado"/>
+                <input class="form-control inputBand border-2" name="salario" #salario="ngModel" ngModel [disabled]="this.solicitado" required/>
+                  <div *ngIf="salario.errors && (salario!.dirty || salario!.touched)" class="alert alert-danger">
+                    <div [hidden]="!salario.errors['required']">Salário obrigatório.</div>
+                  </div>
               </div>
             </div>
 
@@ -45,7 +61,7 @@
               <div class="col mx-3">
                 <label class="form-label mt-2" for="cep">CEP:</label>
                 <div class="input-group">
-                  <input class="form-control inputBand border-2" name="cep" [(ngModel)]="this.cep" [disabled]="this.solicitado"/>
+                  <input class="form-control inputBand border-2" name="cep" [(ngModel)]="this.cep" [disabled]="this.solicitado" required/>
                   <button class="btn btn-secondary" type='button' (click)="requestCep()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -55,37 +71,33 @@
               </div>
               <div class="col">
                 <label class="form-label mt-2" for="cidade">Cidade:</label>
-                <input class="form-control inputBand border-2" name="cidade" [(ngModel)]="this.cidade" [disabled]="this.solicitado"/>
+                <input class="form-control inputBand border-2" name="cidade" [(ngModel)]="this.cidade" [disabled]="this.solicitado" required/>
               </div>
               <div class="col">
                 <label class="form-label mt-2" for="estado">Estado:</label>
-                <input class="form-control inputBand border-2" name="estado" [(ngModel)]="this.estado" [disabled]="this.solicitado"/>
+                <input class="form-control inputBand border-2" name="estado" [(ngModel)]="this.estado" [disabled]="this.solicitado" required/>
               </div>
             </div>
 
             <div class="row">
               <div class="col mx-3">
-                <label class="form-label mt-2" for="tipo_rua">Tipo:</label>
-                <input class="form-control inputBand border-2" name="tipo_rua" [disabled]="this.solicitado"/>
-              </div>
-              <div class="col">
                 <label class="form-label mt-2" for="logradouro"
                   >Logradouro:</label
                 >
-                <input class="form-control inputBand border-2" name="logradouro" [(ngModel)]="this.logradouro" [disabled]="this.solicitado"/>
+                <input class="form-control inputBand border-2" name="logradouro" [(ngModel)]="this.logradouro" [disabled]="this.solicitado" required/>
               </div>
             </div>
 
             <div class="row justify-content-between">
               <div class="col-3 mx-3">
                 <label class="form-label mt-2" for="numero">Número:</label>
-                <input class="form-control inputBand border-2" name="numero" [(ngModel)]="this.numero" [disabled]="this.solicitado"/>
+                <input class="form-control inputBand border-2" name="numero" [(ngModel)]="this.numero" [disabled]="this.solicitado" required/>
               </div>
               <div class="col">
                 <label class="form-label mt-2" for="complemento"
                   >Complemento:</label
                 >
-                <input class="form-control inputBand border-2" name="complemento" [(ngModel)]="this.complemento" [disabled]="this.solicitado"/>
+                <input class="form-control inputBand border-2" name="complemento" [(ngModel)]="this.complemento" [disabled]="this.solicitado" required/>
               </div>
             </div>
           </div>

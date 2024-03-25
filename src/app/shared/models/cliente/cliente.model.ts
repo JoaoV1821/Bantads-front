@@ -11,3 +11,19 @@ export class Cliente {
         public endereco?: Endereco
     ) { }
 }
+
+export interface Formulario {
+   
+    nome: string,
+    cpf: string,
+    telefone: string,
+    email: string,
+    salario: string,
+    cep: string,
+    cidade: string,
+    estado: string,
+    logradouro: string,
+    numero: string,
+    complemento: string
+    
+}
