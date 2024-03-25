@@ -2,18 +2,16 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ViewChild, OnInit } from '@angular/core';
 import { AutocadastroService } from '../services';
-import { Cliente } from '../../shared';
+import { Formulario } from '../../shared';
 @Component({
   selector: 'app-autocadastro',
   templateUrl: './autocadastro.component.html',
   styleUrl: './autocadastro.component.css'
 })
 
-
 export class AutocadastroComponent implements OnInit{
 
   @ViewChild('autocadastroForm') autocadastroForm!: NgForm;
-  cliente: Cliente = new Cliente();
 
   cep! : string;
   logradouro! : string;
@@ -45,17 +43,8 @@ export class AutocadastroComponent implements OnInit{
   }
 
   solicitarCadastro(form: NgForm) {
-    this.solicitado = true;
-    
-    this.cliente.endereco = {
-      cep: form.value.cep,
-      numero: form.value.numero,
-      logradouro: form.value.logradouro,
-      cidade: form.value.cidade,
-      estado: form.value.estado,
-      complemento: form.value.complemento
-    };
-
-    this.autocadastroService.solicitarCadastro(this.cliente);
+    this.solicitado = true;    
+    let dadosForm : Formulario = form.value;
+    this.autocadastroService.solicitarCadastro(dadosForm);
   }
 }

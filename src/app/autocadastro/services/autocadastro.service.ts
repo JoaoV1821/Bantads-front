@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cliente } from '../../shared';
+import { Cliente, Endereco, Formulario } from '../../shared';
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +19,10 @@ export class AutocadastroService {
     });
   }
 
-  solicitarCadastro(cliente : Cliente){
+  solicitarCadastro(formData : Formulario){
     console.log('solicitarCadastro(cliente) :: autocadastro.service');
+    let endereco = new Endereco(formData.cep, formData.cidade, formData.estado, formData.logradouro, formData.numero, formData.complemento);
+    let cliente = new Cliente(formData.nome, formData.cpf, formData.telefone, formData.email, formData.salario, endereco);
     console.log(cliente);
   }
 
