@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Cliente } from '../../shared';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,11 @@ export class AutocadastroService {
         "Content-Type": 'application/json'
       }
     });
+  }
+
+  solicitarCadastro(cliente : Cliente){
+    console.log('solicitarCadastro(cliente) :: autocadastro.service');
+    console.log(cliente);
   }
 
 }

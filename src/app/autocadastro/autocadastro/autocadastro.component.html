@@ -1,104 +1,109 @@
-<body>
-  <div class="container">
-    <div class="row justify-content-center mt-3">
-      <div class="col-lg-10">
-        <div class="card border-2">
-          <h3 class="my-3 mx-3">Cadastro</h3>
-          <form #autocadastroForm="ngForm" (ngSubmit)="solicitarCadastro(autocadastroForm)">
-            <div class="row align-items-start">
-              <div class="row">
-                <div class="col mx-3">
-                  <label class="form-label mt-2" for="nome">Nome:</label>
-                  <input class="form-control inputBand border-2" name="nome" [disabled]="this.solicitado"/>
-                </div>
-                <div class="col">
-                  <label class="form-label mt-2" for="email">Email:</label>
-                  <input class="form-control inputBand border-2" name="email" type="email" [disabled]="this.solicitado"/>
-                </div>
+<div class="container">
+  <div class="row justify-content-center mt-3">
+    <div class="col-lg-10">
+      <div class="card border-2">
+        <h3 class="my-3 mx-3">Cadastro</h3>
+        <form #autocadastroForm="ngForm" (ngSubmit)="solicitarCadastro(autocadastroForm)">
+          <div class="row align-items-start">
+            <div class="row">
+              <div class="col mx-3">
+                <label class="form-label mt-2" for="nome">Nome:</label>
+                <input class="form-control inputBand border-2" name="nome" [(ngModel)]="cliente.nome" [disabled]="this.solicitado"/>
               </div>
-
-              <div class="row justify-content-center">
-                <div class="col-sm-4 mx-3">
-                  <label class="form-label mt-2" for="Telefone"
-                    >Telefone:</label
-                  >
-                  <input class="form-control inputBand border-2" name="telefone" [disabled]="this.solicitado"/>
-                </div>
-                <div class="col-sm-4">
-                  <label class="form-label mt-2" for="salario">Salário:</label>
-                  <input class="form-control inputBand border-2" name="salario" [disabled]="this.solicitado"/>
-                </div>
+              <div class="col">
+                <label class="form-label mt-2" for="email">Email:</label>
+                <input class="form-control inputBand border-2" name="email" type="email" [(ngModel)]="cliente.email" [disabled]="this.solicitado"/>
               </div>
-
-              <div class="card-body">
-                <hr class="my-4" />
-                <h6 class="mx-3">Endereço</h6>
-              </div>
-
-              <div class="row mb-3">
-                <div class="col mx-3">
-                  <label class="form-label mt-2" for="cep">CEP:</label>
-                  <div class="input-group">
-                    <input class="form-control inputBand border-2" name="cep" [(ngModel)]="this.cep" [disabled]="this.solicitado"/>
-                    <button class="btn btn-secondary" (click)="requestCep()">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="col">
-                  <label class="form-label mt-2" for="cidade">Cidade:</label>
-                  <input class="form-control inputBand border-2" name="cidade" [(ngModel)]="this.cidade" [disabled]="this.solicitado"/>
-                </div>
-                <div class="col">
-                  <label class="form-label mt-2" for="estado">Estado:</label>
-                  <input class="form-control inputBand border-2" name="estado" [(ngModel)]="this.estado" [disabled]="this.solicitado"/>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col mx-3">
-                  <label class="form-label mt-2" for="tipo_rua">Tipo:</label>
-                  <input class="form-control inputBand border-2" name="tipo_rua" [disabled]="this.solicitado"/>
-                </div>
-                <div class="col">
-                  <label class="form-label mt-2" for="logradouro"
-                    >Logradouro:</label
-                  >
-                  <input class="form-control inputBand border-2" name="logradouro" [(ngModel)]="this.logradouro" [disabled]="this.solicitado"/>
-                </div>
-              </div>
-
-              <div class="row justify-content-between">
-                <div class="col-3 mx-3">
-                  <label class="form-label mt-2" for="numero">Número:</label>
-                  <input class="form-control inputBand border-2" name="numero" [disabled]="this.solicitado"/>
-                </div>
-                <div class="col">
-                  <label class="form-label mt-2" for="complemento"
-                    >Complemento:</label
-                  >
-                  <input class="form-control inputBand border-2" name="complemento" [(ngModel)]="this.complemento" [disabled]="this.solicitado"/>
-                </div>
+            </div>
+            
+            <div class="row justify-content-center">
+              <div class="col-sm-4">
+                <label class="form-label mt-2" for="cpf">CPF:</label>
+                <input class="form-control inputBand border-2" name="cpf" [(ngModel)]="cliente.cpf" [disabled]="this.solicitado"/>
               </div>
             </div>
 
-            <div class="mt-3 mb-1 text-center">
-              <button *ngIf="!this.solicitado" type="submit" class="btn btn-primary btn-lg fs-4">
-                Solicitar
+            <div class="row justify-content-center">
+              <div class="col-sm-4 mx-3">
+                <label class="form-label mt-2" for="Telefone"
+                  >Telefone:</label
+                >
+                <input class="form-control inputBand border-2" name="telefone" [(ngModel)]="cliente.telefone" [disabled]="this.solicitado"/>
+              </div>
+              <div class="col-sm-4">
+                <label class="form-label mt-2" for="salario">Salário:</label>
+                <input class="form-control inputBand border-2" name="salario" [(ngModel)]="cliente.salario" [disabled]="this.solicitado"/>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <hr class="my-4" />
+              <h6 class="mx-3">Endereço</h6>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col mx-3">
+                <label class="form-label mt-2" for="cep">CEP:</label>
+                <div class="input-group">
+                  <input class="form-control inputBand border-2" name="cep" [(ngModel)]="this.cep" [disabled]="this.solicitado"/>
+                  <button class="btn btn-secondary" type='button' (click)="requestCep()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="col">
+                <label class="form-label mt-2" for="cidade">Cidade:</label>
+                <input class="form-control inputBand border-2" name="cidade" [(ngModel)]="this.cidade" [disabled]="this.solicitado"/>
+              </div>
+              <div class="col">
+                <label class="form-label mt-2" for="estado">Estado:</label>
+                <input class="form-control inputBand border-2" name="estado" [(ngModel)]="this.estado" [disabled]="this.solicitado"/>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col mx-3">
+                <label class="form-label mt-2" for="tipo_rua">Tipo:</label>
+                <input class="form-control inputBand border-2" name="tipo_rua" [disabled]="this.solicitado"/>
+              </div>
+              <div class="col">
+                <label class="form-label mt-2" for="logradouro"
+                  >Logradouro:</label
+                >
+                <input class="form-control inputBand border-2" name="logradouro" [(ngModel)]="this.logradouro" [disabled]="this.solicitado"/>
+              </div>
+            </div>
+
+            <div class="row justify-content-between">
+              <div class="col-3 mx-3">
+                <label class="form-label mt-2" for="numero">Número:</label>
+                <input class="form-control inputBand border-2" name="numero" [(ngModel)]="this.numero" [disabled]="this.solicitado"/>
+              </div>
+              <div class="col">
+                <label class="form-label mt-2" for="complemento"
+                  >Complemento:</label
+                >
+                <input class="form-control inputBand border-2" name="complemento" [(ngModel)]="this.complemento" [disabled]="this.solicitado"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-3 mb-1 text-center">
+            <button *ngIf="!this.solicitado" class="btn btn-primary btn-lg fs-4">
+              Solicitar
+            </button>
+            <div *ngIf="this.solicitado">
+              <button class="btn btn-success btn-lg fs-4" disabled>
+                Solicitado
               </button>
-              <div *ngIf="this.solicitado">
-                <button class="btn btn-success btn-lg fs-4" disabled>
-                  Solicitado
-                </button>
-                <p>Aguardando aprovação do gerente</p>
-              </div>
+              <p>Aguardando aprovação do gerente</p>
             </div>
+          </div>
 
-          </form>
-        </div>
+        </form>
       </div>
     </div>
   </div>
-</body>
+</div>

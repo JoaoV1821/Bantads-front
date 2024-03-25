@@ -4,7 +4,7 @@ import { AutocadastroComponent } from './autocadastro/autocadastro/autocadastro.
 import { LoginComponent } from './login/login/login.component';
 
 const routes: Routes = [
-  {path:'', redirectTo:'autocadastro', pathMatch:'full'},
+  {path:'', redirectTo:'login', pathMatch:'full'},
   {path:'autocadastro', component: AutocadastroComponent },
   {path: 'login', component:  LoginComponent},
 ];

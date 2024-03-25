@@ -7,6 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { AutocadastroModule } from './autocadastro/autocadastro.module';
 import { LoginModule } from './login/login.module';
+import { SharedModule } from './shared/shared.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +19,9 @@ import { LoginModule } from './login/login.module';
     AppRoutingModule,
     LoginModule,
     AutocadastroModule,
+    FormsModule,
+    AutocadastroModule,
+    SharedModule
   ],
 
   providers: [
