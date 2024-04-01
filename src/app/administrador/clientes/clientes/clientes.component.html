@@ -1,0 +1,24 @@
+<div class="container" style="padding-top: 15px">
+    <h1 class="bantads-blue">Clientes</h1>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th class="bantads-blue" scope="col">Nome</th>
+          <th class="bantads-blue" scope="col">CPF</th>
+          <th class="bantads-blue" scope="col">Limite</th>
+          <th class="bantads-blue" scope="col">Gerente</th>
+          <th class="bantads-blue" scope="col">Saldo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of clientes">
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.cpf}}</td>
+            <td>R$ {{ cliente.limite }}</td>
+            <td>{{ cliente.gerente }}</td>
+            <td>R$ {{ cliente.saldo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

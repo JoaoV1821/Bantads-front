@@ -1,0 +1,21 @@
+<div class="container" style="padding-top: 15px">
+  <h1 class="bantads-blue">Gerentes</h1>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th class="bantads-blue" scope="col">Nome</th>
+        <th class="bantads-blue" scope="col">N Cliente</th>
+        <th class="bantads-blue" scope="col">Saldo Positivo</th>
+        <th class="bantads-blue" scope="col">Saldo Negativo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let gerente of gerentes">
+        <td>{{ gerente.nome }}</td>
+        <td>{{ gerente.nclientes }}</td>
+        <td style="color: green;">R$ {{ gerente.saldoPositivo }}</td>
+        <td style="color:red;">R$ {{ gerente.saldoNegativo }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

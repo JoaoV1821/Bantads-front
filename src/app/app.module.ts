@@ -8,6 +8,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { AutocadastroModule } from './autocadastro/autocadastro.module';
 import { LoginModule } from './login/login.module';
 import { SharedModule } from './shared/shared.module';
+import { AdministradorModule } from './administrador/administrador.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SharedModule } from './shared/shared.module';
     AutocadastroModule,
     FormsModule,
     AutocadastroModule,
-    SharedModule
+    SharedModule,
+    AdministradorModule
   ],
 
   providers: [
