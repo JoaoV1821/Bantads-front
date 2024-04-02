@@ -9,6 +9,7 @@ import { AutocadastroModule } from './autocadastro/autocadastro.module';
 import { LoginModule } from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 import { AdministradorModule } from './administrador/administrador.module';
+import { provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AdministradorModule } from './administrador/administrador.module';
   ],
 
   providers: [
-    provideHttpClient()
+    provideHttpClient(),
+    provideNgxMask()
   ],
   bootstrap: [AppComponent]
 })

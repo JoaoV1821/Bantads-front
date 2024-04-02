@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 import { ViewChild, OnInit } from '@angular/core';
 import { AutocadastroService } from '../services';
 import { Formulario } from '../../shared';
@@ -12,13 +12,11 @@ import { Formulario } from '../../shared';
 export class AutocadastroComponent implements OnInit{
 
   @ViewChild('autocadastroForm') autocadastroForm!: NgForm;
+  @ViewChild('cep') cepModel!: NgModel;
+  @ViewChild('cidade') cidadeModel!: NgModel;
+  @ViewChild('estado') estadoModel!: NgModel;
+  @ViewChild('logradouro') logradouroModel!: NgModel;
 
-  cep! : string;
-  logradouro! : string;
-  cidade! : string;
-  estado! : string;
-  complemento! : string;
-  numero! : string;
 
   solicitado : boolean = false;
 
@@ -31,13 +29,12 @@ export class AutocadastroComponent implements OnInit{
   }
 
   requestCep() : void {
-    let cep = this.cep;
+    let cep = this.cepModel.value;
     this.autocadastroService.getCep(cep).subscribe(
       (value : any) => {
-        this.logradouro = value.logradouro;
-        this.cidade = value.localidade;
-        this.estado = value.uf;
-        this.complemento = value.complemento;
+        this.cidadeModel.control.setValue(value.localidade);
+        this.estadoModel.control.setValue(value.uf);
+        this.logradouroModel.control.setValue(value.logradouro);
       }
     )
   }
