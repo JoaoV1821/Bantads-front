@@ -13,7 +13,7 @@ const routes: Routes = [
   {path:'administrador', component: TelaInicialComponent},
   {path:'administrador/clientes', component: ClientesComponent},
   {path:'administrador/gerentes', component: ListarGerenteComponent},
-  {path: 'administrador/gerentes/novo', component: InserirEditarGerenteComponent}
+  {path: 'administrador/gerentes/:id', component: InserirEditarGerenteComponent}
 ];
 
 @NgModule({

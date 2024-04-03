@@ -15,10 +15,13 @@
             <td>{{ cliente.nome }}</td>
             <td>{{ cliente.cpf}}</td>
             <td>R$ {{ cliente.limite }}</td>
-            <td>{{ cliente.gerente }}</td>
+            <td>{{ cliente.gerente?.nome }}</td>
             <td>R$ {{ cliente.saldo }}</td>
         </tr>
       </tbody>
     </table>
+    <div *ngIf="this.clientes.length == 0">
+      <p>Nenhum cliente encontrado.</p>
+    </div>
   </div>
   

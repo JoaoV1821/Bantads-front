@@ -1,4 +1,5 @@
 import { Endereco } from "../endereco";
+import { Gerente } from "../gerente";
 
 export class Cliente {
 
@@ -8,7 +9,10 @@ export class Cliente {
         public telefone?: string,
         public email?: string,
         public salario?: string,
-        public endereco?: Endereco
+        public endereco?: Endereco,
+        public gerente?: Gerente,
+        public saldo? : number,
+        public limite? : number,
     ) { }
 }
 
