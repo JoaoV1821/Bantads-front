@@ -19,10 +19,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let gerente of gerentes">
-          <td>{{ gerente.nome }}</td>
-          <td>{{ gerente.cpf }}</td>
+          <td>{{ gerente.nome | caixaAlta }}</td>
+          <td>{{ gerente.cpf | cpf }}</td>
           <td>{{ gerente.email }}</td>
-          <td>{{ gerente.telefone }}</td>
+          <td>{{ gerente.telefone | telefone }}</td>
           <td class="text-center">
             <button type="button" class="btn btn-warning" style="margin-right: 3px;" [routerLink]="['/administrador/gerentes', gerente.id]">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
