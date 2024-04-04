@@ -15,7 +15,13 @@
                   required
                   stringOnly
                   [(ngModel)]="this.gerente.nome"
+                  #nome="ngModel"
+                  ngModel
                 />
+              </div>
+              <div *ngIf="nome.errors && (nome!.dirty || nome!.touched)" class="alert alert-danger">
+                <div [hidden]="!nome.errors['required']">Nome completo obrigatório.</div>
+                <div [hidden]="!nome.errors['minlength']">O  deve conter no mínimo 3 caracteres.</div>
               </div>
               <div class="col">
                 <label class="form-label mt-2" for="email">Email:</label>
@@ -24,8 +30,13 @@
                   name="email"
                   type="email"
                   required
+                  #email="ngModel"
+                  ngModel
                   [(ngModel)]="this.gerente.email"
                 />
+              </div>
+              <div *ngIf="email.errors && (email!.dirty || email!.touched)" class="alert alert-danger">
+                <div [hidden]="!email.errors['required']">Email obrigatório.</div>
               </div>
             </div>
 
@@ -36,9 +47,17 @@
                   class="form-control inputBand border-2"
                   name="cpf"
                   required
+                  minlength="11"
                   [(ngModel)]="this.gerente.cpf"
                   mask="000.000.000-00"
+                  [disabled]="editando"
+                  #cpf="ngModel"
+                  ngModel
                 />
+              </div>
+              <div *ngIf="cpf.errors && (cpf!.dirty || cpf!.touched)" class="alert alert-danger">
+                <div [hidden]="!cpf.errors['required']">CPF é  obrigatório.</div>
+                <div [hidden]="!cpf.errors['minlength']">O CPF deve conter no mínimo 11 caracteres.</div>
               </div>
               <div class="col-sm-4">
                 <label class="form-label mt-2" for="telefone">Telefone:</label>
@@ -46,9 +65,16 @@
                   class="form-control inputBand border-2"
                   name="telefone"
                   required
+                  minlength="10"
                   [(ngModel)]="this.gerente.telefone"
                   mask="(00) 00000-0000"
+                  #telefone="ngModel"
+                  ngModel
                 />
+              </div>
+              <div *ngIf="telefone.errors && (telefone!.dirty || telefone!.touched)" class="alert alert-danger">
+                <div [hidden]="!telefone.errors['required']">Telefone é obrigatório.</div>
+                <div [hidden]="!telefone.errors['minlength']">O telefone deve conter no mínimo 10 caracteres.</div>
               </div>
             </div>
 
