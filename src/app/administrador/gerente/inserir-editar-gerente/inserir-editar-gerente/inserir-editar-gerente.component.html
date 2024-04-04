@@ -9,20 +9,21 @@
               <div class="col mx-3">
                 <label class="form-label mt-2" for="nome">Nome:</label>
                 <input
+                  type="text"
                   class="form-control inputBand border-2"
                   name="nome"
                   minlength="3"
                   required
-                  stringOnly
                   [(ngModel)]="this.gerente.nome"
                   #nome="ngModel"
                   ngModel
                 />
+                <div *ngIf="nome.errors && (nome!.dirty || nome!.touched)" class="alert alert-danger">
+                  <div [hidden]="!nome.errors['required']">Nome completo obrigatório.</div>
+                  <div [hidden]="!nome.errors['minlength']">O nome deve conter no mínimo 3 caracteres.</div>
+                </div>
               </div>
-              <div *ngIf="nome.errors && (nome!.dirty || nome!.touched)" class="alert alert-danger">
-                <div [hidden]="!nome.errors['required']">Nome completo obrigatório.</div>
-                <div [hidden]="!nome.errors['minlength']">O  deve conter no mínimo 3 caracteres.</div>
-              </div>
+              
               <div class="col">
                 <label class="form-label mt-2" for="email">Email:</label>
                 <input
@@ -34,10 +35,11 @@
                   ngModel
                   [(ngModel)]="this.gerente.email"
                 />
+                <div *ngIf="email.errors && (email!.dirty || email!.touched)" class="alert alert-danger">
+                  <div [hidden]="!email.errors['required']">Email obrigatório.</div>
+                </div>
               </div>
-              <div *ngIf="email.errors && (email!.dirty || email!.touched)" class="alert alert-danger">
-                <div [hidden]="!email.errors['required']">Email obrigatório.</div>
-              </div>
+              
             </div>
 
             <div class="row justify-content-center">
@@ -54,32 +56,34 @@
                   #cpf="ngModel"
                   ngModel
                 />
+                <div *ngIf="cpf.errors && (cpf!.dirty || cpf!.touched)" class="alert alert-danger">
+                  <div [hidden]="!cpf.errors['required']">CPF é  obrigatório.</div>
+                  <div [hidden]="!cpf.errors['minlength']">O CPF deve conter no mínimo 11 caracteres.</div>
+                </div>
               </div>
-              <div *ngIf="cpf.errors && (cpf!.dirty || cpf!.touched)" class="alert alert-danger">
-                <div [hidden]="!cpf.errors['required']">CPF é  obrigatório.</div>
-                <div [hidden]="!cpf.errors['minlength']">O CPF deve conter no mínimo 11 caracteres.</div>
-              </div>
+              
               <div class="col-sm-4">
                 <label class="form-label mt-2" for="telefone">Telefone:</label>
                 <input
                   class="form-control inputBand border-2"
                   name="telefone"
                   required
-                  minlength="10"
+                  minlength="11"
                   [(ngModel)]="this.gerente.telefone"
                   mask="(00) 00000-0000"
                   #telefone="ngModel"
                   ngModel
                 />
+                <div *ngIf="telefone.errors && (telefone!.dirty || telefone!.touched)">
+                  <div class="alert alert-danger" [hidden]="!telefone.errors['required']">O telefone é obrigatório.</div>
+                  <div class="alert alert-danger" [hidden]="!telefone.errors['minlength']">O telefone deve conter no mínimo 11 caracteres.</div>
+                </div>
               </div>
-              <div *ngIf="telefone.errors && (telefone!.dirty || telefone!.touched)" class="alert alert-danger">
-                <div [hidden]="!telefone.errors['required']">Telefone é obrigatório.</div>
-                <div [hidden]="!telefone.errors['minlength']">O telefone deve conter no mínimo 10 caracteres.</div>
-              </div>
+              
             </div>
 
             <div class="mt-3 mb-3 text-center">
-              <button type="button" class="btn btn-primary fs-4" (click)="salvar()">Cadastrar</button>
+              <button [disabled]="gerenteForm.invalid" type="button" class="btn btn-primary fs-4" (click)="salvar()">{{editando ? 'Salvar' : 'Cadastrar'}}</button>
             </div>
           </div>
         </form>

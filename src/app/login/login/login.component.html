@@ -16,8 +16,8 @@
                 }
             }
 
-            @if (loginForm.controls['email'].invalid) {
-                @if (loginForm.controls['email'].errors) {
+            @if (form.controls['email'].invalid) {
+                @if (form.controls['email'].errors) {
                     <p class="error">*Email inválido</p>
                 }
             }
@@ -41,9 +41,9 @@
                     [class.hide]="!showPassword"><img src="../../../assets/icons8-eye-24.png" alt=""></i>
             </div>
 
-            @if (loginForm.controls['password'].touched ) {
+            @if (form.controls['password'].touched ) {
                 
-                @if (loginForm.controls['password'].errors) {
+                @if (form.controls['password'].errors) {
                     <p class="error">*Digite sua senha</p>
                 }
             }

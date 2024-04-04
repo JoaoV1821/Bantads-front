@@ -3,6 +3,9 @@
     <div class="col-lg-10">
       <div class="card border-2">
         <h3 class="my-3 mx-3">Cadastro</h3>
+        <div class="my-3 mx-3" *ngIf="this.solicitado">
+          <p class="alert alert-success">Cadastro solicitado.</p>
+        </div>
         <form #autocadastroForm="ngForm" (ngSubmit)="solicitarCadastro(autocadastroForm)">
           <div class="row align-items-start">
             <div class="row">
@@ -126,7 +129,6 @@
               <button class="btn btn-success btn-lg fs-4" disabled>
                 Solicitado
               </button>
-              <p>Aguardando aprovação do gerente</p>
             </div>
           </div>
 

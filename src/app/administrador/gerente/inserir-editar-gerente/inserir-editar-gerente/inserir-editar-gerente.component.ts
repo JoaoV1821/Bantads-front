@@ -12,7 +12,7 @@ import { NgForm } from '@angular/forms';
 export class InserirEditarGerenteComponent implements OnInit {
   
   @ViewChild('gerenteForm') formGerente! : NgForm;
-  gerente : Gerente = new Gerente(0,'','','','');
+  gerente : Gerente = new Gerente();
   
   constructor(
     private administradorService : AdministradorService,
