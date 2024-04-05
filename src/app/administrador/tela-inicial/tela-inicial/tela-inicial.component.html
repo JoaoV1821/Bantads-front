@@ -1,21 +1,32 @@
 <div class="container" style="padding-top: 15px">
-  <h1 class="bantads-blue">Gerentes</h1>
-  <table class="table table-bordered table-hover">
-    <thead>
-      <tr>
-        <th class="bantads-blue" scope="col">Nome</th>
-        <th class="bantads-blue" scope="col">N Cliente</th>
-        <th class="bantads-blue" scope="col">Saldo Positivo</th>
-        <th class="bantads-blue" scope="col">Saldo Negativo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let gerente of gerentes">
-        <td>{{ gerente.nome }}</td>
-        <td>{{ gerente.nclientes }}</td>
-        <td style="color: green;">R$ {{ gerente.saldoPositivo }}</td>
-        <td style="color:red;">R$ {{ gerente.saldoNegativo }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <h1 class="bantads-blue text-center">Gerentes</h1>
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-top: 15px;
+    "
+  >
+    <div
+      class="card mt-3 mb-3 mx-3"
+      style="width: 250px; border-radius: 20px; background: linear-gradient(to bottom, #eaebeb, #f7f7f7); box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);"
+      *ngFor="let gerente of gerentesTransformed"
+    >
+      <div class="card-body" style="padding: 20px;">
+        <div class="card-title">
+          <h5 style="color: #333;">{{ gerente.gerente | caixaAlta }}</h5>
+        </div>
+        <hr/>
+        <p>Clientes: {{ gerente.numClientes }}</p>
+        <p style="color: green">
+          Saldo Positivo: R$ {{ gerente.saldoPositivo }}
+        </p>
+        <p style="color: red">
+          Saldo Negativo: R$ {{ gerente.saldoNegativo }}
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

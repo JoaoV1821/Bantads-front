@@ -1,5 +1,3 @@
-import { Cliente } from "../cliente";
-
 export class Gerente {
     constructor(
         public id? : number,

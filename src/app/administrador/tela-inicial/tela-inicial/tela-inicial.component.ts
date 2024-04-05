@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { AdministradorService } from '../../services';
+import { Gerente } from '../../../shared';
 
+interface GerenteTelaInicial{
+    gerente? : string,
+    numClientes? : number,
+    saldoPositivo? : number,
+    saldoNegativo? : number
+}
 @Component({
   selector: 'app-tela-inicial',
   templateUrl: './tela-inicial.component.html',
@@ -7,16 +15,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TelaInicialComponent implements OnInit {
 
-  gerentes: any[]  = [
-    {nome: 'Pedro', nclientes: 3, saldoPositivo: 300, saldoNegativo: 400},
-    {nome: 'João', nclientes: 5, saldoPositivo: 1300, saldoNegativo: 10},
-    {nome: 'Rogerinho', nclientes: 4, saldoPositivo: 100000, saldoNegativo: 500000},
-    {nome: 'Elon Musk', nclientes: 60, saldoPositivo: 999999, saldoNegativo: 999999},
-    {nome: 'Razer A N R Montano', nclientes: 50, saldoPositivo: 999999, saldoNegativo: 0},
-  ];
+  gerentes: Gerente[]  = [];
+  gerentesTransformed: GerenteTelaInicial[] = [];
 
   ngOnInit(): void {
-      
+      this.transformGerentes();
+  }
+
+  constructor(
+    private administradorService : AdministradorService
+  ) {}
+
+  listarTodos() : Gerente[] {
+    return this.administradorService.listarTodosGerentes();
+  }
+
+  transformGerentes() : any {
+    this.gerentes = this.listarTodos();
+    this.gerentes.forEach((ger) => {
+      let newGerente : GerenteTelaInicial = {
+        gerente: ger.nome, 
+        numClientes: Math.floor((Math.random() * 100) + 1),
+        saldoPositivo: Math.floor((Math.random() * 10000) + 1),
+        saldoNegativo: Math.floor((Math.random() * 10000) + 1)
+      };
+      this.gerentesTransformed.push(newGerente);
+    })
   }
 
 }
