@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AutocadastroComponent } from './autocadastro/autocadastro/autocadastro.component';
 import { LoginComponent } from './login/login/login.component';
 import { ClientesComponent, InserirEditarGerenteComponent, ListarGerenteComponent, TelaInicialComponent } from './administrador';
+import { TelaInicialGerenteComponent } from './gerente';
+
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -13,7 +15,11 @@ const routes: Routes = [
   {path:'administrador', component: TelaInicialComponent},
   {path:'administrador/clientes', component: ClientesComponent},
   {path:'administrador/gerentes', component: ListarGerenteComponent},
-  {path: 'administrador/gerentes/:id', component: InserirEditarGerenteComponent}
+  {path: 'administrador/gerentes/:id', component: InserirEditarGerenteComponent},
+
+  //Gerentes
+  {path:'gerente', component: TelaInicialGerenteComponent}
+
 ];
 
 @NgModule({

@@ -9,6 +9,7 @@ import { LoginModule } from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 import { AdministradorModule } from './administrador/administrador.module';
 import { provideNgxMask } from 'ngx-mask';
+import { GerenteModule } from './gerente';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { provideNgxMask } from 'ngx-mask';
     FormsModule,
     AutocadastroModule,
     SharedModule,
-    AdministradorModule
+    AdministradorModule,
+    GerenteModule
   ],
 
   providers: [
