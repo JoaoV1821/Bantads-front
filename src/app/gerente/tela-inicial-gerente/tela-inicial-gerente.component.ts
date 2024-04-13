@@ -10,7 +10,7 @@ import { Cliente } from '../../shared';
 export class TelaInicialGerenteComponent implements OnInit{
   
   clientes : Cliente[] = [];
-  motivo : boolean = false;
+  motivo : string = '';
 
   constructor(
     private gerenteService : GerenteService
@@ -31,21 +31,21 @@ export class TelaInicialGerenteComponent implements OnInit{
     this.clientes = this.gerenteService.listarTodosClientes();
   }
 
-  togglerejeicao(cliente: Cliente): void {
-    if (cliente.rejeicao === undefined) {
+  toggleRejeicao(cliente: Cliente): void {
+    if (cliente.limite === undefined) {
       this.resetMotivoRejeicao();
-      cliente.rejeicao = '';
+      cliente.limite = undefined;
     } else {
-      cliente.rejeicao = undefined;
+      cliente.limite = 0;
     }
   }
 
   resetMotivoRejeicao(): void {
-    this.clientes.forEach(cliente => cliente.rejeicao = undefined);
+    this.clientes.forEach(cliente => cliente.limite = undefined);
   }
 
   rejeitarCliente(cliente: Cliente): void {
-    if (cliente.rejeicao !== null && cliente.rejeicao?.trim() !== '') {
+    if (this.motivo !== undefined && this.motivo?.trim() !== '') {
       this.gerenteService.removerCliente(cliente.id!);
       this.clientes = this.gerenteService.listarTodosClientes();
     }

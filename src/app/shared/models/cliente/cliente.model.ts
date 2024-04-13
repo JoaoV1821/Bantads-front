@@ -13,8 +13,7 @@ export class Cliente {
         public endereco?: Endereco,
         public gerente?: Gerente,
         public saldo? : number,
-        public limite? : number,
-        public rejeicao? : string
+        public limite? : number
     ) { }
 }
 
