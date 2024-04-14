@@ -13,37 +13,41 @@
                 
                 @if (f['email'].errors['required']) {
                     <p class="error">*Digite seu email</p>
+
+
                 }
+
+                @if (f['email'].invalid && !f['email'].errors['required']) {
+                    @if (f['email'].errors) {
+                        <p class="error">*Email inválido</p>
+                    }
+                }
+    
             }
 
-            @if (form.controls['email'].invalid) {
-                @if (form.controls['email'].errors) {
-                    <p class="error">*Email inválido</p>
-                }
-            }
-
+         
 
         </div>
 
         <div class="mb-3" style="width: 40%;">
             <label for="">Senha</label>
             <div class="d-flex position-relative">
-                <input [type]="showPassword ? 'text' : 'password'" type="password" id="inputSenha" class="form-control" placeholder="Digite sua senha" required name="password" #password  ngModel>
+                <input formControlName="password" [type]="showPassword ? 'text' : 'password'" type="password" id="inputSenha" class="form-control" placeholder="Digite sua senha" required name="password" #password  ngModel  [ngClass]="{'is-invalid': submitted && f['password'].errors}">
                 
                 <i alt="show" class="far fa-eye eye-show position-absolute"
-                    style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"
+                    style="right: 35px; top: 50%; transform: translateY(-50%); cursor: pointer;"
                     (click)="showPassword = !showPassword"
                     [class.hide]="showPassword"><img src="../../../assets/icons8-invisible-24.png" alt=""></i>
                 
                 <i alt="hide" class="far fa-eye-slash eye-hide position-absolute"
-                    style="right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"
+                    style="right: 35px; top: 50%; transform: translateY(-50%); cursor: pointer;"
                     (click)="showPassword = !showPassword"
                     [class.hide]="!showPassword"><img src="../../../assets/icons8-eye-24.png" alt=""></i>
             </div>
 
-            @if (form.controls['password'].touched ) {
+            @if (submitted && f['password'].errors) {
                 
-                @if (form.controls['password'].errors) {
+                @if (f['password'].errors['required']) {
                     <p class="error">*Digite sua senha</p>
                 }
             }

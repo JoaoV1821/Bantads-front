@@ -1,6 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -42,19 +41,14 @@ export class LoginComponent implements OnInit{
   
     }
 
-  validateEmail(email:string) : boolean {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i;
 
-    return emailRegex.test(email);
-  }
-
-  
   public submit(): void{
     this.submitted = true;
+    
 
     if (this.form.invalid){
       return;
-    }
+    } 
   }  
 
   onReset(): void {

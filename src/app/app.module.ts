@@ -10,11 +10,17 @@ import { SharedModule } from './shared/shared.module';
 import { AdministradorModule } from './administrador/administrador.module';
 import { provideNgxMask } from 'ngx-mask';
 import { HomeComponent } from './home/home.component';
+import { SaqueComponent } from './saque/saque.component';
+import { TransferenciaComponent } from './transferencia/transferencia.component';
+import { DepositoComponent } from './deposito/deposito.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    SaqueComponent,
+    TransferenciaComponent,
+    DepositoComponent,
   
   ],
   imports: [
