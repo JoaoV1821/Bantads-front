@@ -13,7 +13,7 @@
       <tr *ngFor="let cliente of clientes">
         <td>{{ cliente.nome | caixaAlta }}</td>
         <td>{{ cliente.cpf | cpf }}</td>
-        <td>R$ {{ cliente.salario }}</td>
+        <td>{{ cliente.salario | currency:'BRL' }}</td>
         <td class="text-center">
           <button class="btn btn-success btn-sm mx-3" (click)="aprovarCliente(cliente)" >Aprovar</button>
           <button class="btn btn-danger btn-sm" (click)="toggleRejeicao(cliente)" >Rejeitar</button>

@@ -21,10 +21,10 @@
         <hr/>
         <p>Clientes: {{ gerente.numClientes }}</p>
         <p style="color: green">
-          Saldo Positivo: R$ {{ gerente.saldoPositivo }}
+          Saldo Positivo:  {{ gerente.saldoPositivo | currency:'BRL'}}
         </p>
         <p style="color: red">
-          Saldo Negativo: R$ {{ gerente.saldoNegativo }}
+          Saldo Negativo: {{ gerente.saldoNegativo | currency:'BRL' }}
         </p>
       </div>
     </div>

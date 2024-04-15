@@ -23,8 +23,17 @@
               <li><a class="dropdown-item" href="#" [routerLink]="['/administrador/gerentes']">ADM: Gerentes</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link"  href="#" [routerLink]="['/gerente']" > Gerente</a>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Gerente
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" [routerLink]="['/gerente']">GER: Tela Inicial</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#" [routerLink]="['/gerente/consultar']">GER: Consultar</a></li>
+              <li><a class="dropdown-item" href="#" [routerLink]="['/gerente/consultar-todos']">GER: Consultar Todos</a></li>
+              <li><a class="dropdown-item" href="#" [routerLink]="['/gerente/consultar-top3']">GER: Consultar Top 3</a></li>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link disabled" aria-disabled="true">Disabled</a>

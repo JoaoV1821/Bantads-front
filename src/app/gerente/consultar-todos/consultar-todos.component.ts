@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { GerenteService } from '../services';
 import { Cliente } from '../../shared';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalClienteComponent } from '../modal-cliente';
 
 @Component({
   selector: 'app-consultar-todos',
@@ -12,7 +14,8 @@ export class ConsultarTodosComponent implements OnInit{
   clientes : Cliente[] = [];
 
   constructor(
-    private gerenteService : GerenteService
+    private gerenteService : GerenteService,
+    private modalService : NgbModal
   ) {}
 
   ngOnInit(): void {
@@ -26,6 +29,13 @@ export class ConsultarTodosComponent implements OnInit{
 
   handlePesquisa() : void {
     
+  }
+
+  abrirModalCliente($event:any,cliente: Cliente) {
+    $event.preventDefault();
+    const modalRef = this.modalService.open(ModalClienteComponent);
+    // this.modalService.open(content, { size: 'xl' });
+    modalRef.componentInstance.cliente = cliente;
   }
 
 }

@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { AdministradorModule } from './administrador/administrador.module';
 import { provideNgxMask } from 'ngx-mask';
 import { GerenteModule } from './gerente';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { GerenteModule } from './gerente';
     AutocadastroModule,
     SharedModule,
     AdministradorModule,
-    GerenteModule
+    GerenteModule,
+    NgbModule
   ],
 
   providers: [
