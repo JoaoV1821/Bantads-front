@@ -1,0 +1,115 @@
+<div class="container text-center">
+  <h1 class="bantads-blue" style="padding-top: 15px">Consultar Cliente</h1>
+  <div class="row justify-content-center" style="padding-top: 15px">
+    <div class="col-4">
+      <div class="input-group">
+        <input
+          class="form-control border-2"
+          placeholder="CPF"
+          mask="000.000.000-00"
+          #cpf="ngModel"
+          ngModel
+          required
+          minlength="11"
+        />
+        <button class="btn btn-secondary" type="button" [disabled]="cpf.errors"  (click)="handlePesquisa()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-search"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+            />
+          </svg>
+        </button>
+      </div>
+      <div *ngIf="cpf.errors && (cpf!.dirty || cpf!.touched)" class="alert alert-danger">
+        <div [hidden]="!cpf.errors['required']">CPF obrigatório.</div>
+        <div [hidden]="!cpf.errors['minlength']">CPF deve conter no mínimo 11 caracteres.</div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="this.pesquisado">
+    <div class="row justify-content-center" style="padding-top: 5px;">
+      <div
+        class="card mt-3 mb-3 mx-3"
+        style="
+          width: 250px;
+          border-radius: 20px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          background: linear-gradient(to top, #14213d, #314a89);
+          color: #ffffff;
+        "
+      >
+        <div class="card-body" style="padding: 20px">
+          <div class="card-title">
+            <h5 style="font-weight: bold">Conta</h5>
+          </div>
+          <hr />
+          <div class="text-start">
+            <p>Número da conta:</p>
+            <p>Data da criação:</p>
+            <p>Limite:</p>
+            <p>Gerente:</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="card mt-3 mb-3 mx-3"
+        style="
+          width: 250px;
+          border-radius: 20px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          background: linear-gradient(to top, #14213d, #314a89);
+          color: #ffffff;
+        "
+      >
+        <div class="card-body" style="padding: 20px">
+          <div class="card-title">
+            <h5 style="font-weight: bold">Cliente</h5>
+          </div>
+          <hr />
+          <div class="text-start">
+            <p>Nome:</p>
+            <p>Email:</p>
+            <p>CPF:</p>
+            <p>Telefone:</p>
+            <p>Salário:</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="card mt-3 mb-3 mx-3"
+        style="
+          width: 250px;
+          border-radius: 20px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          background: linear-gradient(to top, #14213d, #314a89);
+          color: #ffffff;
+        "
+      >
+        <div class="card-body" style="padding: 20px">
+          <div class="card-title">
+            <h5 style="font-weight: bold">Endereço</h5>
+          </div>
+          <hr />
+          <div class="text-start">
+            <p>Rua:</p>
+            <p>Número:</p>
+            <p>Complemento:</p>
+            <p>CEP:</p>
+            <p>Cidade:</p>
+            <p>Estado:</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -47,7 +47,19 @@ export class GerenteService {
     this.removerTodosClientes();
     let cliente: Cliente[] = [
       {
-      id: new Date().getTime(),
+        id: new Date().getTime(),
+        nome:'Joao Santos', 
+        cpf: '06649958819', 
+        telefone: '41966668888', 
+        email: 'joaosantos@gmail.com', 
+        salario:'50', 
+        endereco: enderecosExemplo[2], 
+        gerente: gerenteExemplo, 
+        saldo: 100000, 
+        limite: 50
+      },
+      {
+      id: new Date().getTime()+1,
       nome:'Rafael Pedroso I', 
       cpf: '10110110111', 
       telefone: '41999998888', 
@@ -59,25 +71,13 @@ export class GerenteService {
       limite: 50
     },
     {
-      id: new Date().getTime()+1,
+      id: new Date().getTime()+2,
       nome:'Timoteo Chalamet', 
       cpf: '99999999988', 
       telefone: '41898987474', 
       email: 'timoteo@gmail.com', 
       salario:'100000', 
       endereco: enderecosExemplo[1], 
-      gerente: gerenteExemplo, 
-      saldo: 100000, 
-      limite: 50
-    },
-    {
-      id: new Date().getTime()+2,
-      nome:'Joao Santos', 
-      cpf: '06649958819', 
-      telefone: '41966668888', 
-      email: 'joaosantos@gmail.com', 
-      salario:'50', 
-      endereco: enderecosExemplo[3], 
       gerente: gerenteExemplo, 
       saldo: 100000, 
       limite: 50

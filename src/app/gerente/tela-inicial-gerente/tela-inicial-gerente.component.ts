@@ -10,7 +10,6 @@ import { Cliente } from '../../shared';
 export class TelaInicialGerenteComponent implements OnInit{
   
   clientes : Cliente[] = [];
-  motivo : string = '';
 
   constructor(
     private gerenteService : GerenteService
@@ -19,7 +18,6 @@ export class TelaInicialGerenteComponent implements OnInit{
   ngOnInit(): void {
     this.gerenteService.insertClientes();
     this.clientes = this.listarTodosClientes();
-    console.log(this.clientes);
   }
 
   listarTodosClientes() : Cliente[] {
@@ -45,9 +43,7 @@ export class TelaInicialGerenteComponent implements OnInit{
   }
 
   rejeitarCliente(cliente: Cliente): void {
-    if (this.motivo !== undefined && this.motivo?.trim() !== '') {
       this.gerenteService.removerCliente(cliente.id!);
       this.clientes = this.gerenteService.listarTodosClientes();
-    }
   }
 }
