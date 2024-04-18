@@ -4,12 +4,14 @@ import { AutocadastroComponent } from './autocadastro/autocadastro/autocadastro.
 import { LoginComponent } from './login/login/login.component';
 import { ClientesComponent, InserirEditarGerenteComponent, ListarGerenteComponent, TelaInicialComponent } from './administrador';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {HomeComponent} from './home/home.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
   {path:'autocadastro', component: AutocadastroComponent },
   {path:'login', component:  LoginComponent},
   {path: 'dashboard', component: DashboardComponent},
+  {path: 'home', component: HomeComponent},
 
   //Administrador
   {path:'administrador', component: TelaInicialComponent},

@@ -10,12 +10,14 @@ import { SharedModule } from './shared/shared.module';
 import { AdministradorModule } from './administrador/administrador.module';
 import { provideNgxMask } from 'ngx-mask';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {HomeComponent} from './home/home.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-  
+    HomeComponent,  
   ],
   imports: [
     BrowserModule,
