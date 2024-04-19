@@ -1,67 +1,33 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extrato</title>
-</head>
-
-<body>
-
-    <section class="extrato">
-        <h2>Extrato</h2>
-
-        <div class="saldo">
-            <span>Saldo:</span>
-            <span>R$ 1.000,00</span>
-<!--             <button class="esconder" (click)="esconderSaldo()">Esconder</button>
- -->        </div>
-
-        <div class="limite">
-            <span>Limite:</span>
-            <span>R$ 1.000,00</span>
-        </div>
-
-        <table class="historico">
-            <thead>
-                <tr>
-                    <th>Data/hora</th>
-                    <th>Operação</th>
-                    <th>Origem</th>
-                    <th>Destino</th>
-                    <th>Valor</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>20/03/2024 12:54:06</td>
-                    <td>Depósito</td>
-                    <td>Conta corrente</td>
-                    <td></td>
-                    <td>R$ 1.210,00</td>
-                </tr>
-                <tr>
-                    <td>20/03/2024 12:54:06</td>
-                    <td>Saque</td>
-                    <td>Conta corrente</td>
-                    <td></td>
-                    <td style="color: red;">R$ -900,00</td>
-                </tr>
-                <tr>
-                    <td>20/03/2024 12:54:06</td>
-                    <td>Transferência</td>
-                    <td>Conta corrente</td>
-                    <td>Beltrano Silva</td>
-                    <td>R$ 2.000,00</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-
-</body>
-
-
-
-</html>
+<section class="extrato">
+    <h2>Consulta de Extrato</h2>
+  
+    <div class="filtros">
+      <label>Data de Início: <input type="date" [(ngModel)]="dataInicio"></label>
+      <label>Data de Fim: <input type="date" [(ngModel)]="dataFim"></label>
+      <button (click)="filtrarTransacoes()">Filtrar</button>
+    </div>
+  
+    <div class="saldo">
+      <span>Saldo: {{ calcularSaldo() | currency:'BRL':'symbol':'1.2-2' }}</span>
+    </div>
+  
+    <table class="historico">
+      <thead>
+        <tr>
+          <th>Data/hora</th>
+          <th>Operação</th>
+          <th>Origem/Destino</th>
+          <th>Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let transacao of extrato" [ngClass]="getClassForOperacao(transacao)">
+          <td>{{ transacao.dataHora }}</td>
+          <td>{{ transacao.operacao }}</td>
+          <td>{{ transacao.origemDestino }}</td>
+          <td>{{ transacao.valor | currency:'BRL':'symbol':'1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  

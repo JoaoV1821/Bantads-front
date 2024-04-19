@@ -56,6 +56,7 @@ main {
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
+    margin-top: 20px;
 }
 
 
@@ -115,3 +116,8 @@ h2 {
 .historico td:nth-child(5):not(:empty):not(:nth-child(5):contains("-")) {
     color: red;
 }
+
+.valor-negativo {
+    color: red;
+  }
+  
