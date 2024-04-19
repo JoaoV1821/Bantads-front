@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { SaqueComponent } from './saque/saque.component';
 import { TransferenciaComponent } from './transferencia/transferencia.component';
 import { DepositoComponent } from './deposito/deposito.component';
+import { ConsultarExtratoComponent } from './consultar-extrato/consultar-extrato.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { DepositoComponent } from './deposito/deposito.component';
     SaqueComponent,
     TransferenciaComponent,
     DepositoComponent,
+    ConsultarExtratoComponent,
   
   ],
   imports: [

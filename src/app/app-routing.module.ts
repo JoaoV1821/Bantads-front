@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { SaqueComponent } from './saque/saque.component';
 import { TransferenciaComponent } from './transferencia/transferencia.component';
 
+import { ConsultarExtratoComponent } from './consultar-extrato/consultar-extrato.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'saque', component: SaqueComponent},
   {path: 'transferencia', component: TransferenciaComponent},
 
+  {path: 'consultar-extrato', component: ConsultarExtratoComponent},
 
   //Administrador
   {path:'administrador', component: TelaInicialComponent},
