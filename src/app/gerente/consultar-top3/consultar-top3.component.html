@@ -16,11 +16,11 @@
         </div>
         <hr />
         <div class="text-start">
-          <p>CPF:</p>
-          <p>Nome:</p>
-          <p>Cidade:</p>
-          <p>Estado:</p>
-          <p style="font-weight: bold">Saldo:</p>
+          <p>CPF: {{ clientes[0].cpf | cpf }}</p>
+          <p>Nome: {{ clientes[0].nome }}</p>
+          <p>Cidade: {{ clientes[0].endereco?.cidade | caixaAlta }}</p>
+          <p>Estado: {{ clientes[0].endereco?.estado | caixaAlta }}</p>
+          <p style="font-weight: bold">Saldo: {{ clientes[0].saldo | currency:'BRL' }}</p>
         </div>
       </div>
     </div>
@@ -40,11 +40,11 @@
         </div>
         <hr />
         <div class="text-start">
-          <p>CPF:</p>
-          <p>Nome:</p>
-          <p>Cidade:</p>
-          <p>Estado:</p>
-          <p style="font-weight: bold">Saldo:</p>
+          <p>CPF: {{ clientes[1].cpf | cpf }}</p>
+          <p>Nome: {{ clientes[1].nome }}</p>
+          <p>Cidade: {{ clientes[1].endereco?.cidade | caixaAlta }}</p>
+          <p>Estado: {{ clientes[1].endereco?.estado | caixaAlta }}</p>
+          <p style="font-weight: bold">Saldo: {{ clientes[1].saldo | currency:'BRL' }}</p>
         </div>
       </div>
     </div>
@@ -64,11 +64,11 @@
         </div>
         <hr />
         <div class="text-start">
-          <p>CPF:</p>
-          <p>Nome:</p>
-          <p>Cidade:</p>
-          <p>Estado:</p>
-          <p style="font-weight: bold">Saldo:</p>
+          <p>CPF: {{ clientes[2].cpf | cpf }}</p>
+          <p>Nome: {{ clientes[2].nome }}</p>
+          <p>Cidade: {{ clientes[2].endereco?.cidade }}</p>
+          <p>Estado: {{ clientes[2].endereco?.estado | caixaAlta }}</p>
+          <p style="font-weight: bold">Saldo: {{ clientes[2].saldo | currency:'BRL' }}</p>
         </div>
       </div>
     </div>

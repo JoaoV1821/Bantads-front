@@ -43,6 +43,16 @@ export class GerenteService {
     return clientes ? JSON.parse(clientes) : [];
   }
 
+  listarTop3() : Cliente[] {
+    const clientes = localStorage[LS_CLIENTES];
+    return clientes ? JSON.parse(clientes) : [];
+  }
+
+  buscarPorCpf(cpf : string) : Cliente | undefined {
+    const cliente : Cliente [] = this.listarTodosClientes();
+    return cliente.find(cliente => cliente.cpf === cpf);
+  }
+
   insertClientes() : void {
     this.removerTodosClientes();
     let cliente: Cliente[] = [
