@@ -19,7 +19,6 @@ const routes: Routes = [
   {path: 'saque', component: SaqueComponent},
   {path: 'transferencia', component: TransferenciaComponent},
   {path: 'deposito', component: DepositoComponent},
-
   {path: 'consultar-extrato', component: ConsultarExtratoComponent},
 
   //Administrador
