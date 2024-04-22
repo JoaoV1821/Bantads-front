@@ -10,11 +10,8 @@
             <input type="email" formControlName="email" id="inputEmail" class="form-control" #email placeholder="Digite seu email" required autofocus name="email" ngModel [ngClass]="{'is-invalid': submitted && f['email'].errors}">
 
             @if (submitted && f['email'].errors) {
-                
                 @if (f['email'].errors['required']) {
                     <p class="error">*Digite seu email</p>
-
-
                 }
 
                 @if (f['email'].invalid && !f['email'].errors['required']) {
@@ -22,10 +19,7 @@
                         <p class="error">*Email inválido</p>
                     }
                 }
-    
             }
-
-         
 
         </div>
 
