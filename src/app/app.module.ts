@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { AutocadastroModule } from './autocadastro/autocadastro.module';
 import { LoginModule } from './login/login.module';
@@ -16,7 +16,7 @@ import { SaqueComponent } from './saque/saque.component';
 import { TransferenciaComponent } from './transferencia/transferencia.component';
 import { DepositoComponent } from './deposito/deposito.component';
 import { ConsultarExtratoComponent } from './consultar-extrato/consultar-extrato.component';
-import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AutocadastroModule,
     SharedModule,
     GerenteModule,
-    NgbModule
+    NgbModule,
     NgxMaskDirective,
     AdministradorModule,
   ],
