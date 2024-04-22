@@ -39,7 +39,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AutocadastroModule,
     SharedModule,
     GerenteModule,
-    NgbModule
+    NgbModule,
     NgxMaskDirective,
     AdministradorModule,
   ],
