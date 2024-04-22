@@ -8,12 +8,15 @@ import { AutocadastroModule } from './autocadastro/autocadastro.module';
 import { LoginModule } from './login/login.module';
 import { SharedModule } from './shared/shared.module';
 import { AdministradorModule } from './administrador/administrador.module';
+import { GerenteModule } from './gerente';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { provideNgxMask, NgxMaskDirective } from 'ngx-mask';
 import { DashboardComponent} from './dashboard/dashboard.component';
 import { SaqueComponent } from './saque/saque.component';
 import { TransferenciaComponent } from './transferencia/transferencia.component';
 import { DepositoComponent } from './deposito/deposito.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -33,9 +36,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     AutocadastroModule,
     SharedModule,
+    GerenteModule,
+    NgbModule
     NgxMaskDirective,
     AdministradorModule,
-  
   ],
 
   providers: [

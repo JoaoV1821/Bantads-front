@@ -16,7 +16,7 @@ export class AdministradorService {
     let endereco = new Endereco('1000011', 'Curitiba', 'PR', 'Rua Parana', '111', '');
     let gerente = new Gerente(1, 'Gerente do Rafael I', '20220220222', 'gerente@gmail.com', '41888887777');
     let cliente: Cliente = new Cliente(
-      'Rafael Pedroso I', '10110110111', '41999998888', 'rafaelpedroso@gmail.com', '10000', endereco, gerente, 100000, 50
+      new Date().getTime() ,'Rafael Pedroso I', '10110110111', '41999998888', 'rafaelpedroso@gmail.com', '10000', endereco, gerente, 100000, 50
     );
     const clientes = this.listarTodosClientes();
     for(let i = 1; i <= count; i++){

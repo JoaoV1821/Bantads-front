@@ -22,7 +22,7 @@ export class AutocadastroService {
   solicitarCadastro(formData : Formulario){
     console.log('solicitarCadastro(cliente) :: autocadastro.service');
     let endereco = new Endereco(formData.cep, formData.cidade, formData.estado, formData.logradouro, formData.numero, formData.complemento);
-    let cliente = new Cliente(formData.nome, formData.cpf, formData.telefone, formData.email, formData.salario, endereco);
+    let cliente = new Cliente(0,formData.nome, formData.cpf, formData.telefone, formData.email, formData.salario, endereco);
     console.log(cliente);
   }
 
