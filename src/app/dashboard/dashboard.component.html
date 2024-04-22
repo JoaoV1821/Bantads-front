@@ -10,8 +10,12 @@
         
         <fieldset class="saldo">
             <h2>Saldo: </h2> 
-            <h4>R$1000,00</h4>  
-            <div><small>Esconder</small></div>
+            @if (this.isVisible) {
+                <h4 class="saldoAmount">R${{this.saldo}}</h4>  
+            } @else {
+                <h4 class="saldoAmount">********</h4>
+            }
+            <div ><small (click)='hideSaldo()'>Esconder</small></div>
         </fieldset>
     </main>
 
@@ -22,7 +26,7 @@
         </div>
 
         <div class="card">
-            <button class="button-image"><img src="../../assets/deposito.png" alt=""></button>
+            <button class="button-image" onclick="window.location.href = '/deposito' "><img src="../../assets/deposito.png" alt=""></button>
             <h2>Depósito</h2>
         </div>
 

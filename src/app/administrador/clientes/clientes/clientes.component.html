@@ -13,10 +13,10 @@
       <tbody>
         <tr *ngFor="let cliente of clientes">
             <td>{{ cliente.nome }}</td>
-            <td>{{ cliente.cpf}}</td>
-            <td>R$ {{ cliente.limite }}</td>
+            <td>{{ cliente.cpf | cpf}}</td>
+            <td>{{ cliente.limite | currency:'BRL'}}</td>
             <td>{{ cliente.gerente?.nome }}</td>
-            <td>R$ {{ cliente.saldo }}</td>
+            <td>{{ cliente.saldo | currency:'BRL'}}</td>
         </tr>
       </tbody>
     </table>

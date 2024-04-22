@@ -44,6 +44,12 @@
     margin-top: 3%;
 }
 
+
+.error {
+    color: red;
+  }
+
+
 .button {
     margin-top: 2%;
     width: 15%;
@@ -51,3 +57,16 @@
     background-color: '#14213D';
 }
 
+.hidden {
+    display: none;
+}
+
+.money {
+    border: 0;
+
+}
+input:focus {
+    outline: none;
+  }
+  
+  

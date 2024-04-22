@@ -4,6 +4,7 @@ import { Gerente } from "../gerente";
 export class Cliente {
 
     constructor(
+        public id? : number,
         public nome?: string,
         public cpf?: string,
         public telefone?: string,
@@ -12,7 +13,7 @@ export class Cliente {
         public endereco?: Endereco,
         public gerente?: Gerente,
         public saldo? : number,
-        public limite? : number,
+        public limite? : number
     ) { }
 }
 

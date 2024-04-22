@@ -11,7 +11,7 @@
   >
     <div
       class="card mt-3 mb-3 mx-3"
-      style="width: 250px; border-radius: 20px; background: linear-gradient(to bottom, #eaebeb, #f7f7f7); box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);"
+      style="width: 250px; border-radius: 20px; background: linear-gradient(to top, #eaebeb, #f7f7f7); box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);"
       *ngFor="let gerente of gerentesTransformed"
     >
       <div class="card-body" style="padding: 20px;">
@@ -21,10 +21,10 @@
         <hr/>
         <p>Clientes: {{ gerente.numClientes }}</p>
         <p style="color: green">
-          Saldo Positivo: R$ {{ gerente.saldoPositivo }}
+          Saldo Positivo:  {{ gerente.saldoPositivo | currency:'BRL'}}
         </p>
         <p style="color: red">
-          Saldo Negativo: R$ {{ gerente.saldoNegativo }}
+          Saldo Negativo: {{ gerente.saldoNegativo | currency:'BRL' }}
         </p>
       </div>
     </div>

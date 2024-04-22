@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { TelaInicialComponent } from './tela-inicial/tela-inicial/tela-inicial.component';
 import { ClientesComponent } from './clientes/clientes/clientes.component';
 import { InserirEditarGerenteComponent } from './gerente/inserir-editar-gerente/inserir-editar-gerente/inserir-editar-gerente.component';
@@ -24,7 +24,8 @@ import { NgxCurrencyDirective } from 'ngx-currency';
     SharedModule,
     NgxMaskDirective,
     NgxMaskPipe,
-    NgxCurrencyDirective
+    NgxCurrencyDirective,
+    CurrencyPipe
   ],
 })
 export class AdministradorModule { }
