@@ -9,6 +9,7 @@ import { SaqueComponent } from './saque/saque.component';
 import { TransferenciaComponent } from './transferencia/transferencia.component';
 import { DepositoComponent } from './deposito/deposito.component';
 
+import { ConsultarExtratoComponent } from './consultar-extrato/consultar-extrato.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'transferencia', component: TransferenciaComponent},
   {path: 'deposito', component: DepositoComponent},
 
+  {path: 'consultar-extrato', component: ConsultarExtratoComponent},
 
   //Administrador
   {path:'administrador', component: TelaInicialComponent},

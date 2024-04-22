@@ -15,6 +15,7 @@ import { DashboardComponent} from './dashboard/dashboard.component';
 import { SaqueComponent } from './saque/saque.component';
 import { TransferenciaComponent } from './transferencia/transferencia.component';
 import { DepositoComponent } from './deposito/deposito.component';
+import { ConsultarExtratoComponent } from './consultar-extrato/consultar-extrato.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SaqueComponent,
     TransferenciaComponent,
     DepositoComponent,
+    ConsultarExtratoComponent,
   
   ],
   imports: [
