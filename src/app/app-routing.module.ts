@@ -4,12 +4,21 @@ import { AutocadastroComponent } from './autocadastro/autocadastro/autocadastro.
 import { LoginComponent } from './login/login/login.component';
 import { ClientesComponent, InserirEditarGerenteComponent, ListarGerenteComponent, TelaInicialComponent } from './administrador';
 import { ConsultarTop3Component, TelaInicialGerenteComponent, ConsultarClienteComponent, ConsultarTodosComponent } from './gerente';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { SaqueComponent } from './saque/saque.component';
+import { TransferenciaComponent } from './transferencia/transferencia.component';
+import { DepositoComponent } from './deposito/deposito.component';
 
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
   {path:'autocadastro', component: AutocadastroComponent },
   {path:'login', component:  LoginComponent},
+  {path: 'home', component: DashboardComponent},
+  {path: 'saque', component: SaqueComponent},
+  {path: 'transferencia', component: TransferenciaComponent},
+  {path: 'deposito', component: DepositoComponent},
+
 
   //Administrador
   {path:'administrador', component: TelaInicialComponent},
