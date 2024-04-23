@@ -25,6 +25,7 @@ const routes: Routes = [
   {path: 'deposito', component: DepositoComponent},
 
   {path: 'extrato', component: ConsultarExtratoComponent},
+  {path: 'consultar-extrato', component: ConsultarExtratoComponent},
 
   {path: 'dashboard', component: DashboardComponent},
   {path: 'home', component: HomeComponent},
