@@ -48,7 +48,9 @@ export class LoginComponent implements OnInit{
 
     if (this.form.invalid){
       return;
-    } 
+    } else {
+      window.location.href='/dashboard'
+    }
   }  
 
   onReset(): void {

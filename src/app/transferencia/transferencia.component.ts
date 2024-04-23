@@ -45,7 +45,7 @@ export class TransferenciaComponent {
     if (this.form.invalid) {
       return;
     } else {
-      console.log('oi')
+      
       alert('transferência realizada com sucesso!');
     }
   }

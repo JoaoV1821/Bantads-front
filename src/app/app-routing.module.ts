@@ -4,24 +4,31 @@ import { AutocadastroComponent } from './autocadastro/autocadastro/autocadastro.
 import { LoginComponent } from './login/login/login.component';
 import { ClientesComponent, InserirEditarGerenteComponent, ListarGerenteComponent, TelaInicialComponent } from './administrador';
 import { ConsultarTop3Component, TelaInicialGerenteComponent, ConsultarClienteComponent, ConsultarTodosComponent } from './gerente';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { SaqueComponent } from './saque/saque.component';
 import { TransferenciaComponent } from './transferencia/transferencia.component';
 import { DepositoComponent } from './deposito/deposito.component';
 
 import { ConsultarExtratoComponent } from './consultar-extrato/consultar-extrato.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
+
+
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
   {path:'autocadastro', component: AutocadastroComponent },
   {path:'login', component:  LoginComponent},
-  {path: 'home', component: DashboardComponent},
+
+  
   {path: 'saque', component: SaqueComponent},
   {path: 'transferencia', component: TransferenciaComponent},
   {path: 'deposito', component: DepositoComponent},
 
-  {path: 'consultar-extrato', component: ConsultarExtratoComponent},
+  {path: 'extrato', component: ConsultarExtratoComponent},
 
+  {path: 'dashboard', component: DashboardComponent},
+  {path: 'home', component: HomeComponent},
+  
   //Administrador
   {path:'administrador', component: TelaInicialComponent},
   {path:'administrador/clientes', component: ClientesComponent},
