@@ -11,6 +11,7 @@ import { DepositoComponent } from './deposito/deposito.component';
 import { ConsultarExtratoComponent } from './consultar-extrato/consultar-extrato.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './guard/auth.guard';
 
 
 
@@ -20,27 +21,27 @@ const routes: Routes = [
   {path:'login', component:  LoginComponent},
 
   
-  {path: 'saque', component: SaqueComponent},
-  {path: 'transferencia', component: TransferenciaComponent},
-  {path: 'deposito', component: DepositoComponent},
+  {path: 'saque', component: SaqueComponent, canActivate: [AuthGuard]},
+  {path: 'transferencia', component: TransferenciaComponent, canActivate: [AuthGuard]},
+  {path: 'deposito', component: DepositoComponent, canActivate: [AuthGuard]},
 
-  {path: 'extrato', component: ConsultarExtratoComponent},
-  {path: 'consultar-extrato', component: ConsultarExtratoComponent},
+  {path: 'extrato', component: ConsultarExtratoComponent, canActivate: [AuthGuard]},
+  {path: 'consultar-extrato', component: ConsultarExtratoComponent, canActivate: [AuthGuard]},
 
   {path: 'dashboard', component: DashboardComponent},
   {path: 'home', component: HomeComponent},
   
   //Administrador
-  {path:'administrador', component: TelaInicialComponent},
-  {path:'administrador/clientes', component: ClientesComponent},
-  {path:'administrador/gerentes', component: ListarGerenteComponent},
-  {path: 'administrador/gerentes/:id', component: InserirEditarGerenteComponent},
+  {path:'administrador', component: TelaInicialComponent, canActivate: [AuthGuard]},
+  {path:'administrador/clientes', component: ClientesComponent, canActivate: [AuthGuard]},
+  {path:'administrador/gerentes', component: ListarGerenteComponent, canActivate: [AuthGuard]},
+  {path: 'administrador/gerentes/:id', component: InserirEditarGerenteComponent, canActivate: [AuthGuard]},
 
   //Gerentes
-  {path:'gerente', component: TelaInicialGerenteComponent},
-  {path:'gerente/consultar', component: ConsultarClienteComponent},
-  {path:'gerente/consultar-todos', component: ConsultarTodosComponent},
-  {path:'gerente/consultar-top3', component: ConsultarTop3Component},
+  {path:'gerente', component: TelaInicialGerenteComponent, canActivate: [AuthGuard]},
+  {path:'gerente/consultar', component: ConsultarClienteComponent, canActivate: [AuthGuard]},
+  {path:'gerente/consultar-todos', component: ConsultarTodosComponent, canActivate: [AuthGuard]},
+  {path:'gerente/consultar-top3', component: ConsultarTop3Component, canActivate: [AuthGuard]},
 
 ];
 

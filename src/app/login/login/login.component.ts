@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthGuard } from '../../guard/auth.guard';
 
 @Component({
   selector: 'app-login',
@@ -49,6 +50,7 @@ export class LoginComponent implements OnInit{
     if (this.form.invalid){
       return;
     } else {
+      
       window.location.href='/dashboard'
     }
   }  

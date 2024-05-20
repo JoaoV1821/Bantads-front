@@ -17,6 +17,7 @@ import { TransferenciaComponent } from './transferencia/transferencia.component'
 import { DepositoComponent } from './deposito/deposito.component';
 import { ConsultarExtratoComponent } from './consultar-extrato/consultar-extrato.component';
 import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './guard/auth.guard';
 
 
 
@@ -48,7 +49,8 @@ import { HomeComponent } from './home/home.component';
 
   providers: [
     provideHttpClient(),
-    provideNgxMask()
+    provideNgxMask(),
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
