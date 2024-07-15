@@ -12,6 +12,7 @@ import { ConsultarExtratoComponent } from './consultar-extrato/consultar-extrato
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './guard/auth.guard';
+import { EditarcadastroComponent } from './editar-cadastro';
 
 
 
@@ -19,6 +20,8 @@ const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
   {path:'autocadastro', component: AutocadastroComponent },
   {path:'login', component:  LoginComponent},
+
+  {path:'editarcadastro', component: EditarcadastroComponent },
 
   
   {path: 'saque', component: SaqueComponent, canActivate: [AuthGuard]},

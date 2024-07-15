@@ -7,17 +7,19 @@
 </head>
 <body>
     <main>
-        
         <fieldset class="saldo">
-            <h2>Saldo: </h2> 
-            @if (this.isVisible) {
-                <h4 class="saldoAmount">R${{this.saldo}}</h4>  
-            } @else {
-                <h4 class="saldoAmount">********</h4>
-            }
-            <div ><small (click)='hideSaldo()'>Esconder</small></div>
+            <h2>Saldo:</h2>
+            <h4 class="saldoAmount">
+                {{ isVisible ? 'R$' + saldo : '********' }}
+            </h4>
+            <div>
+                <small (click)="hideSaldo()" class="hideSaldo">
+                    {{ isVisible ? 'Esconder' : 'Mostrar' }}
+                </small>
+            </div>
         </fieldset>
     </main>
+    
 
     <section class="actions">
         <div class="card">

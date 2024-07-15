@@ -1,4 +1,6 @@
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<nav class="navbar navbar-dark navbar-expand-lg"> 
     <div class="container-fluid">
       <a href="#"><img src="../assets/logo.png" style="width: 136px; height: 80px;"/></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,10 +49,16 @@
           </li>
           -->
         </ul>
-        <form class="d-flex" role="search">
+        <div class="buttons"> 
+          <a onclick="window.location.href='/autocadastro'" class="btn btn-primary">ABRA SUA CONTA</a>
+          <a onclick="window.location.href='/login'" class="btn btn-secondary">LOGIN</a>
+          <a onclick="window.location.href='/editarcadastro'" class="btn btn-secondary">SUA CONTA <i class="fa fa-user user-icon"></i></a>
+
+      </div>
+        <!-- <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Pesquisa" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Pesquisa</button>
-        </form>
+        </form> -->
       </div>
     </div>
   </nav>

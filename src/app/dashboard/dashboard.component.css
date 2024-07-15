@@ -39,3 +39,11 @@ main > fieldset {
     width: 100%;
     border: 0px;
 }
+.hideSaldo {
+    cursor: pointer; 
+}
+  
+  .hideSaldo:hover {
+    text-decoration: underline;
+  }
+  
