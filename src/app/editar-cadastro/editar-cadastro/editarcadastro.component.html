@@ -2,16 +2,16 @@
   <div class="row justify-content-center mt-3">
     <div class="col-lg-10">
       <div class="card border-2">
-        <h3 class="my-3 mx-3">Cadastro</h3>
+        <h3 class="my-3 mx-3">Editar dados pessoais</h3>
         <div class="my-3 mx-3" *ngIf="this.solicitado">
-          <p class="alert alert-success">Cadastro solicitado.</p>
+          <p class="alert alert-success">Edição solicitada.</p>
         </div>
         <form #editarcadastroForm="ngForm" (ngSubmit)="salvarEdicao(editarcadastroForm)">
           <div class="row align-items-start">
             <div class="row">
               <div class="col mx-3">
                 <label class="form-label mt-2" for="nome">Nome:</label>
-                <input class="form-control inputBand border-2" name="nome" #nome="ngModel" ngModel [disabled]="this.solicitado" minlength="3" required/>
+                <input class="form-control inputBand border-2" name="nome" [(ngModel)]="usuario.nome" #nome="ngModel" [disabled]="solicitado" minlength="3" required />
                   <div *ngIf="nome.errors && (nome!.dirty || nome!.touched)" class="alert alert-danger">
                       <div [hidden]="!nome.errors['required']">Nome completo obrigatório.</div>
                       <div [hidden]="!nome.errors['minlength']">O nome deve conter no mínimo 3 caracteres.</div>
@@ -19,38 +19,38 @@
               </div>
               <div class="col">
                 <label class="form-label mt-2" for="email">Email:</label>
-                <input class="form-control inputBand border-2" name="email" type="email" #email="ngModel" ngModel [disabled]="this.solicitado" required />
+                <input class="form-control inputBand border-2" name="email" type="email" [(ngModel)]="usuario.email" #email="ngModel" [disabled]="this.solicitado" required />
                   <div *ngIf="email.errors && (email!.dirty || email!.touched)" class="alert alert-danger">
                     <div [hidden]="!email.errors['required']">Email obrigatório.</div>
                   </div>
               </div>
             </div>
             
-            <div class="row justify-content-center">
+            <div class="row justify-content mx-1">
               <div class="col-sm-4">
                 <label class="form-label mt-2" for="cpf">CPF:</label>
-                <input class="form-control inputBand border-2" name="cpf" #cpf="ngModel" ngModel [disabled]="this.solicitado" required minlength="11" mask="000.000.000-00"/>
+                <input class="form-control inputBand border-2" name="cpf" #cpf="ngModel" [(ngModel)]="usuario.cpf" [disabled]="this.solicitado" required minlength="11" mask="000.000.000-00"/>
                   <div *ngIf="cpf.errors && (cpf!.dirty || cpf!.touched)" class="alert alert-danger">
                     <div [hidden]="!cpf.errors['required']">CPF obrigatório.</div>
                     <div [hidden]="!cpf.errors['minlength']">Mínimo 11 caracteres.</div>
                   </div>
               </div>
-            </div>
-
-            <div class="row justify-content-center">
               <div class="col-sm-4 mx-3">
                 <label class="form-label mt-2" for="Telefone"
                   >Telefone:</label
                 >
-                <input class="form-control inputBand border-2" name="telefone" #telefone="ngModel" ngModel [disabled]="this.solicitado" required minlength="10"  mask="(00) 00000-0000"/>
+                <input class="form-control inputBand border-2" name="telefone" #telefone="ngModel" [(ngModel)]="usuario.telefone" [disabled]="this.solicitado" required minlength="10"  mask="(00) 00000-0000"/>
                   <div *ngIf="telefone.errors && (telefone!.dirty || telefone!.touched)" class="alert alert-danger">
                     <div [hidden]="!telefone.errors['required']">Telefone obrigatório.</div>
                     <div [hidden]="!telefone.errors['minlength']">Mínimo 10 caracteres.</div>
                   </div>
               </div>
+            </div>
+
+            <div class="row justify-content mx-1">
               <div class="col-sm-4">
                 <label class="form-label mt-2" for="salario">Salário:</label>
-                <input class="form-control inputBand border-2" name="salario" #salario="ngModel" ngModel [disabled]="this.solicitado" required  currencyMask
+                <input class="form-control inputBand border-2" name="salario" #salario="ngModel" [(ngModel)]="usuario.salario" [disabled]="this.solicitado" required  currencyMask
                     [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"/>
                   <div *ngIf="salario.errors && (salario!.dirty || salario!.touched)" class="alert alert-danger">
                     <div [hidden]="!salario.errors['required']">Salário obrigatório.</div>
@@ -67,7 +67,7 @@
               <div class="col mx-3">
                 <label class="form-label mt-2" for="cep">CEP:</label>
                 <div class="input-group">
-                  <input class="form-control inputBand border-2" name="cep" #cep="ngModel" ngModel [disabled]="this.solicitado" minlength="8" required mask="00000-000"/>
+                  <input class="form-control inputBand border-2" name="cep" #cep="ngModel" [(ngModel)]="usuario.cep" [disabled]="this.solicitado" minlength="8" required mask="00000-000"/>
                   <button class="btn btn-secondary" type='button' (click)="requestCep()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                       <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -81,14 +81,14 @@
               </div>
               <div class="col">
                 <label class="form-label mt-2" for="cidade">Cidade:</label>
-                <input class="form-control inputBand border-2" name="cidade" #cidade="ngModel" ngModel [disabled]="this.solicitado" required/>
+                <input class="form-control inputBand border-2" name="cidade" #cidade="ngModel" [(ngModel)]="usuario.cidade" [disabled]="this.solicitado" required/>
                 <div *ngIf="cidade.errors && (cidade!.dirty || cidade!.touched)" class="alert alert-danger">
                   <div [hidden]="!cidade.errors['required']">Cidade obrigatória.</div>
                 </div>
               </div>
               <div class="col">
                 <label class="form-label mt-2" for="estado">Estado:</label>
-                <input class="form-control inputBand border-2" name="estado" #estado="ngModel" ngModel [disabled]="this.solicitado" required/>
+                <input class="form-control inputBand border-2" name="estado" #estado="ngModel" [(ngModel)]="usuario.estado" [disabled]="this.solicitado" required/>
                 <div *ngIf="estado.errors && (estado!.dirty || estado!.touched)" class="alert alert-danger">
                   <div [hidden]="!estado.errors['required']">Estado obrigatório.</div>
                 </div>
@@ -100,7 +100,7 @@
                 <label class="form-label mt-2" for="logradouro"
                   >Logradouro:</label
                 >
-                <input class="form-control inputBand border-2" name="logradouro" #logradouro="ngModel" ngModel [disabled]="this.solicitado" required/>
+                <input class="form-control inputBand border-2" name="logradouro" #logradouro="ngModel" [(ngModel)]="usuario.logradouro" [disabled]="this.solicitado" required/>
                 <div *ngIf="logradouro.errors && (logradouro!.dirty || logradouro!.touched)" class="alert alert-danger">
                   <div [hidden]="!logradouro.errors['required']">Logradouro obrigatório.</div>
                 </div>
@@ -110,13 +110,13 @@
             <div class="row justify-content-between">
               <div class="col-3 mx-3">
                 <label class="form-label mt-2" for="numero">Número:</label>
-                <input class="form-control inputBand border-2" name="numero" #numero="ngModel" ngModel [disabled]="this.solicitado" required numerico/>
+                <input class="form-control inputBand border-2" name="numero" #numero="ngModel" [(ngModel)]="usuario.numero" [disabled]="this.solicitado" required numerico/>
               </div>
               <div class="col">
                 <label class="form-label mt-2" for="complemento"
                   >Complemento:</label
                 >
-                <input class="form-control inputBand border-2" name="complemento" #complemento="ngModel" ngModel [disabled]="this.solicitado" />
+                <input class="form-control inputBand border-2" name="complemento" #complemento="ngModel" [(ngModel)]="usuario.complemento" [disabled]="this.solicitado" />
               </div>
             </div>
           </div>
